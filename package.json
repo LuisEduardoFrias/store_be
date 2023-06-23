@@ -1,0 +1,28 @@
+{
+  "name": "store_be",
+  "version": "1.0.0",
+  "description": "this is an api for a store anything",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisEduardoFrias/store_be.git"
+  },
+  "author": "luiseduardofrias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisEduardoFrias/store_be/issues"
+  },
+  "homepage": "https://github.com/LuisEduardoFrias/store_be#readme",
+  "dependencies": {
+    "daj": "github:LuisEduardoFrias/DaJ",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.9"
+  }
+}
