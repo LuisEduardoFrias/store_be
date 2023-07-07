@@ -24,6 +24,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "httpc": "github:LuisEduardoFrias/HttpC",
     "nodemon": "^1.14.9"
   }
 }

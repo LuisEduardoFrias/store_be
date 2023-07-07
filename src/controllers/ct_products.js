@@ -1,4 +1,4 @@
-const product = require("../models/models");
+const product = require("../models/product");
 
 class ct_products {
    static getById(gate, key) {
@@ -9,14 +9,18 @@ class ct_products {
    }
    static post(gate, obj) {
       const p = new product();
+      console.table(new product())
       p.mapper(obj);
+      const salePorcent = p.PurchasePrice * 0.3;
+      const itbisPorcent = (p.PurchasePrice + salePorcent) * 0.18;
+      p.SalePrice = p.PurchasePrice + salePorcent + itbisPorcent;
+      
       return gate.postAsync(p);
    }
-   static put(gate) {}
-   static delete(gate, id) {
+   static put(gate, obj) {
       const p = new product();
-      p.key = id;
-      return gate.deleteAsync(p);
+      p.mapper(obj);
+      return gate.putAsync(p);
    }
 }
 

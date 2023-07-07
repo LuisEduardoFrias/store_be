@@ -1,16 +1,17 @@
-//const  express = require("express");
-//const router = express.Router();
-const bills = (router, gate) => {
-   router.get("/bills/", (req, res) => {
-      res.status(200).json({ message: res.params.id });
+const ct_bills  = require("../controllers/ct_bills");
+
+const bills = (router, daj) => {
+   router.get("/bills", (req, res) => {
+      const _res = ct_bills.get(daj);
+      if (_res.error === null) res.status(200).json(_res.data);
+      else res.status(400).json({ err: _res.error });
    });
 
    router.get("/bills/:id", (req, res) => {
-      res.status(200).json({ message: res.params.id });
+      const _res = ct_bills.getById(daj, req.params.id);
+      if (_res.error === null) res.status(200).json(_res.data);
+      else res.status(400).json({ err: _res.error });
    });
 
-   router.post("/bills", (req, res) => {
-      res.status(200).json({ message: res.params.id });
-   });
 };
 module.exports = bills;
