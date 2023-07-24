@@ -9,19 +9,22 @@ class ct_products {
    }
    static post(gate, obj) {
       const p = new product();
-      console.table(new product())
+      
       p.mapper(obj);
-      const salePorcent = p.PurchasePrice * 0.3;
-      const itbisPorcent = (p.PurchasePrice + salePorcent) * 0.18;
-      p.SalePrice = p.PurchasePrice + salePorcent + itbisPorcent;
+      const salePorcent = parseFloat(p.PurchasePrice) * 0.3;
+      
+      const itbisPorcent = ((parseFloat(p.PurchasePrice) +
+      parseFloat(salePorcent)) * (parseFloat(p.Itbis) / 100));
+      
+      p.SalePrice = parseFloat(p.PurchasePrice) + parseFloat(salePorcent) + parseFloat(itbisPorcent);
       
       return gate.postAsync(p);
    }
-   static put(gate, obj) {
+    static put(gate, obj) {
       const p = new product();
       p.mapper(obj);
       return gate.putAsync(p);
-   }
+    }
 }
 
 module.exports = ct_products;
