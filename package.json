@@ -21,10 +21,10 @@
     "cors": "^2.8.5",
     "daj": "github:LuisEduardoFrias/DaJ",
     "express": "^4.18.2",
+    "httpc": "github:LuisEduardoFrias/HttpC",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "httpc": "github:LuisEduardoFrias/HttpC",
     "nodemon": "^1.14.9"
   }
 }
